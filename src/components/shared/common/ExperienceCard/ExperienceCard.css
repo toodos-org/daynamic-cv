@@ -1,0 +1,68 @@
+@import "../../../../theme/variable.css";
+
+/* --- experience-card-title --- */
+.experience-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+h3.exp-card-title-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+
+.exp-card-title-left a {
+  font-family: var(--font-en-primary);
+  font-size: 16px;
+  line-height: 1rem;
+  color: var(--heading-color);
+}
+
+.exp-card-title-left a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--heading-color);
+}
+
+.exp-card-title-left .type {
+  font-family: var(--font-en-secondary);
+  color: var(--text-color-secondary);
+  font-size: 12px;
+  background-color: #f3f4f6;
+  padding: 2px 8px 1px;
+  border-radius: 7px;
+  line-height: 1.23rem;
+}
+
+.exp-card-title-left .type.hide {
+  display: none;
+}
+
+.exp-card-title-right p {
+  font-size: 0.875rem;
+  line-height: 1.28rem;
+  font-family: var(--font-en-primary);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* --- experience-info --- */
+.experience-info h4.designation {
+  line-height: 1;
+  font-size: 0.875rem;
+  margin-top: 6px !important;
+  font-family: var(--font-en-secondary);
+  color: var(--heading-color);
+  font-weight: 500;
+}
+
+.experience-info p.info {
+  font-family: var(--font-en-secondary);
+  margin-top: 8px !important;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--text-color);
+}

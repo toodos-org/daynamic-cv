@@ -1,0 +1,22 @@
+@import "../../../theme/variable.css";
+@import "../../../theme/exports/title.css";
+
+/* --- education-main --- */
+.education-main {
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* --- education-main-child --- */
+.education-main-child {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 0.75rem;
+}
+
+/* --- education-cards --- */
+.education-cards {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 0.75rem;
+}

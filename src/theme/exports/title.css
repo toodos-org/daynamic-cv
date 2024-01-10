@@ -1,0 +1,8 @@
+@import "../variable.css";
+
+.title h1 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-family: var(--font-en-primary);
+  color: var(--heading-color);
+}

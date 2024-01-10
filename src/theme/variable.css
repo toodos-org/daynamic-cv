@@ -1,0 +1,19 @@
+:root {
+  /* --- FONT-FAMILY CONTROL --- */
+  --font-en-primary: "Inter", sans-serif;
+  --font-en-secondary: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, Courier New, monospace;
+
+  /* --- CONTAINER CONTROL --- */
+  --container-max-width: 672px;
+
+  /* --- BODY CONTROL --- */
+  --body-bg-color: #ffffff;
+
+  /* --- GLOBAL VARIABLE --- */
+  --color-white: #fff;
+  --heading-color: #030712;
+  --text-color: #6b7280;
+  --text-color-secondary: #111827;
+  --border-color: 1px solid #e5e7eb;
+}

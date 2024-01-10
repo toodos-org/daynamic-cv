@@ -1,0 +1,42 @@
+@import "../../../theme/variable.css";
+@import "../../../theme/exports/title.css";
+
+/* --- skill --- */
+.skill {
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* --- skill-main --- */
+.skill-main {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 0.75rem;
+}
+
+/* --- all-skills --- */
+.all-skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.all-skills ul li {
+  background-color: #111827cc;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-family: var(--font-en-secondary);
+  font-weight: 600;
+  color: #f9f1fb;
+  border-radius: calc(0.5rem - 2px);
+  padding: 3px 8px 3px;
+  transition: all 0.1s linear;
+}
+
+.all-skills ul li:hover {
+  background-color: #11182799;
+}

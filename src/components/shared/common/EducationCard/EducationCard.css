@@ -1,0 +1,44 @@
+@import "../../../../theme/variable.css";
+
+/* --- education-card-title --- */
+.education-card-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3rem;
+}
+
+h3.edu-card-title-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+}
+
+.edu-card-title-left {
+  font-family: var(--font-en-primary);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--heading-color);
+}
+
+.edu-card-title-left .type.hide {
+  display: none;
+}
+
+.edu-card-title-right p {
+  font-size: 0.875rem;
+  line-height: 1.28rem;
+  font-family: var(--font-en-primary);
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+/* --- education-info --- */
+.education-info p.info {
+  font-family: var(--font-en-secondary);
+  margin-top: 8px !important;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var(--text-color);
+}
