@@ -21,6 +21,12 @@ footer {
   }
 }
 
+@media print {
+  footer {
+    display: none;
+  }
+}
+
 /* --- footer-child --- */
 .footer-child {
   display: flex;

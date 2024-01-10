@@ -1,6 +1,14 @@
 import "./DownloadPopup.css";
 
 function DownloadPopup(_props) {
+  function cvPrint() {
+    _props.sliderToggle(false);
+
+    setTimeout(() => {
+      window.print();
+    }, 100);
+  }
+
   return (
     <>
       <div
@@ -48,7 +56,7 @@ function DownloadPopup(_props) {
 
                   <ul>
                     <li>
-                      <a>Print</a>
+                      <a onClick={() => cvPrint()}>Print</a>
                     </li>
                   </ul>
                 </div>

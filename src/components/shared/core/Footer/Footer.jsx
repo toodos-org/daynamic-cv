@@ -4,6 +4,7 @@ import "./Footer.css";
 
 function Footer() {
   const [data, setData] = useState(false);
+  let controlBtn = false;
 
   function sliderToggle(data) {
     setData(data);
@@ -13,8 +14,30 @@ function Footer() {
       document.getElementsByTagName("body")[0].classList.add("slider-show");
     } else {
       document.getElementsByTagName("body")[0].classList.remove("slider-show");
+      controlBtn = true;
     }
   }
+
+  // keyboard kye btn click
+  window.addEventListener("keydown", (e) => {
+    if (e.key.toLowerCase() === "shift") {
+      controlBtn = true;
+    }
+
+    if (e.key.toLowerCase() === "f" && controlBtn === true) {
+      sliderToggle(true);
+    }
+  });
+
+  window.addEventListener("keyup", (e) => {
+    if (e.key.toLowerCase() === "shift") {
+      controlBtn = false;
+    }
+  });
+
+  window.addEventListener("click", (e) => {
+    console.log(e);
+  });
 
   return (
     <>
@@ -23,8 +46,8 @@ function Footer() {
           <div className="footer-child">
             <p>
               Press
-              <span onClick={() => sliderToggle(true)}>
-                ⌘<small>J</small>
+              <span>
+                Shift + <small>f</small>
               </span>
               to open the command menu
             </p>
