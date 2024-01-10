@@ -35,10 +35,6 @@ function Footer() {
     }
   });
 
-  window.addEventListener("click", (e) => {
-    console.log(e);
-  });
-
   return (
     <>
       <footer>
