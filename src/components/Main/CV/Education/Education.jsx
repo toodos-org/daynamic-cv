@@ -1,4 +1,4 @@
-import EducationCard from "../../shared/common/EducationCard/EducationCard";
+import EducationCard from "../../../shared/common/EducationCard/EducationCard";
 import "./Education.css";
 
 function Education() {

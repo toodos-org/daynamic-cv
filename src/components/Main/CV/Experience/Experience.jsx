@@ -1,4 +1,4 @@
-import ExperienceCard from "../../shared/common/ExperienceCard/ExperienceCard";
+import ExperienceCard from "../../../shared/common/ExperienceCard/ExperienceCard";
 import "./Experience.css";
 
 function Experience() {

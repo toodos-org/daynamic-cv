@@ -1,0 +1,16 @@
+main.cv {
+  padding: 64px;
+}
+
+@media (max-width: 1280px) {
+  main.cv {
+    padding-right: 64px;
+  }
+}
+
+@media (max-width: 668px) {
+  main.cv {
+    padding: 1rem;
+  }
+
+}

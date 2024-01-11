@@ -1,4 +1,4 @@
-import profile from "../../../assets/images/png/profile.jpg";
+import profile from "../../../../assets/images/png/profile.jpg";
 import "./Profile.css";
 
 function Profile() {

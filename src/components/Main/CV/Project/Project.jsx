@@ -1,4 +1,4 @@
-import ProjectCard from "../../shared/common/ProjectCard/ProjectCard";
+import ProjectCard from "../../../shared/common/ProjectCard/ProjectCard";
 import "./Project.css";
 
 function Project() {

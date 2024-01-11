@@ -1,35 +1,17 @@
-import Footer from "../shared/core/Footer/Footer";
-import About from "./About/About";
-import Education from "./Education/Education";
-import Experience from "./Experience/Experience";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CV from "./CV/CV";
+import Login from "./Login/Login";
 import "./Main.css";
-import Profile from "./Profile/Profile";
-import Project from "./Project/Project";
-import Skill from "./Skill/Skill";
 
 function Main() {
   return (
     <main>
-      <Profile></Profile>
-      {/* --- END! Profile --- */}
-
-      <About></About>
-      {/* --- END! About --- */}
-
-      <Experience></Experience>
-      {/* --- END! Experience --- */}
-
-      <Education></Education>
-      {/* --- END! Education --- */}
-
-      <Skill></Skill>
-      {/* --- END! Skill --- */}
-
-      <Project></Project>
-      {/* --- END! Project --- */}
-
-      <Footer></Footer>
-      {/* --- END! Footer --- */}
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+          <Route exact path="/cv" element={<CV />} />
+        </Routes>
+      </BrowserRouter>
     </main>
   );
 }
