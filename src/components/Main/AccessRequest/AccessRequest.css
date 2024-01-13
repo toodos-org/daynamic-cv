@@ -1,7 +1,7 @@
 @import "../../../theme/variable.css";
 
-/* --- login --- */
-section.login {
+/* --- access-req --- */
+section.access-req {
   width: 100%;
   display: flex;
   align-items: center;
@@ -17,14 +17,14 @@ section.login {
 }
 
 @media (max-width: 600px) {
-  section.login {
+  section.access-req {
     background-size: 291%;
   }
 }
 
-/* --- login-main --- */
-.login-main {
-  max-width: 500px;
+/* --- access-req-main --- */
+.access-req-main {
+  max-width: 400px;
   width: 100%;
   display: grid;
   grid-template-columns: 100%;
@@ -35,20 +35,20 @@ section.login {
 }
 
 @media (max-width: 856px) {
-  .login-main {
+  .access-req-main {
     box-shadow: 0 0 16px 2px #ebebeb;
   }
 }
 
-/* --- login-main-left --- */
-.login-main-left {
-  padding: 21px 22px 22px 23px;
+/* --- access-req-main-left --- */
+.access-req-main-left {
+  padding: 18px 22px 22px 19px;
   background-color: rgba(38, 43, 72, 0.92);
 }
 
-.login-main-left h1 {
+.access-req-main-left h1 {
   font-family: var(--font-en-primary);
-  font-size: 25px;
+  font-size: 22px;
   color: var(--color-white);
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -56,15 +56,15 @@ section.login {
 }
 
 @media (max-width: 556px) {
-  .login-main-left h1 {
+  .access-req-main-left h1 {
     font-size: 24px;
     padding-bottom: 22px;
     padding-top: 9px;
   }
 }
 
-/* --- login-main-right --- */
-.login-main-right {
+/* --- access-req-main-right --- */
+.access-req-main-right {
   padding: 22px;
   background-color: #fff;
   display: flex;
@@ -75,7 +75,7 @@ section.login {
   height: 100%;
 }
 
-.login-main-right form {
+.access-req-main-right form {
   width: 100%;
 }
 
@@ -111,22 +111,22 @@ section.login {
 
 .request-mail a {
   font-family: var(--font-en-primary);
-  color: red;
+  color: var(--heading-color);
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
+  display: inline-block;
 }
 
 .request-mail a:hover {
   text-decoration: underline;
-  text-decoration-color: red;
+  text-decoration-color: var(--heading-color);
 }
 
 .submit-btn {
   margin-top: 19px;
-}
-
-.submit-btn.submit-btn-first {
-  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .submit-btn button {
@@ -143,7 +143,7 @@ section.login {
 }
 
 @media (max-width: 556px) {
-  .login-main-right {
+  .access-req-main-right {
     padding: 15px;
   }
 

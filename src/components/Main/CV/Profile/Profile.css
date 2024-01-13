@@ -41,6 +41,7 @@ section.profile-main {
   justify-content: flex-start;
   gap: 0.375rem;
   line-height: 1rem;
+  position: relative;
 }
 
 .location a small {
@@ -95,6 +96,7 @@ section.profile-main {
   justify-content: center;
   background-color: transparent;
   transition: all 0.1s linear;
+  position: relative;
 }
 
 .profile-social-media ul li a:hover {
@@ -125,6 +127,27 @@ section.profile-main {
 
 .profile-social-media ul li a:hover svg.withFill {
   fill: var(--heading-color);
+}
+
+.profile-social-media ul li:last-child a span {
+  position: absolute;
+  bottom: 19px;
+  right: -22px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.12s linear;
+}
+
+.profile-social-media ul li:last-child a span svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-color);
+}
+
+.profile-social-media ul li:last-child a:hover span {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* --- profile-main-child-right --- */
