@@ -1,7 +1,66 @@
+import { useMutation } from "@apollo/client";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { SIGN_IN_USER } from "../../../gql_operation/mutation";
 import "./Login.css";
 
 function Login() {
+  // USE LOGIN REQUEST
+  const [signInRequest, { data, loading, error }] = useMutation(SIGN_IN_USER, {
+    onCompleted: (res) => {
+      console.log("login success");
+      console.log(res);
+    },
+    onError: (err) => {
+      console.log(err);
+    },
+  });
+
+  // FORM DATA
+  const [formData, setFormData] = useState({});
+  const [formError, setFormError] = useState({});
+  const checkEmail = /\S+@\S+\.\S+/;
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (
+      (!formData.username || !checkEmail.test(formData.username)) &&
+      !formData.password
+    ) {
+      setFormError({
+        username: !formData.username ? "Email is required" : "Email is not valid",
+        password: !formData.password ? "Password is required!" : "",
+      });
+    } else {
+      if (!formData.username || !checkEmail.test(formData.username)) {
+        setFormError({
+          username: !formData.username ? "Email is required" : "Email is not valid",
+          password: "",
+        });
+      } else if (!formData.password) {
+        setFormError({
+          username: "",
+          password: !formData.password ? "Password is required!" : "",
+        });
+      } else {
+        console.log(formData);
+        signInRequest({
+          variables: {
+            ...formData,
+          },
+        });
+        setFormError({});
+      }
+    }
+  };
+
   return (
     <>
       <section className="login">
@@ -12,14 +71,23 @@ function Login() {
           {/* --- END! login-main-left --- */}
 
           <div className="login-main-right">
-            <form>
+            <form onSubmit={(e) => handleFormSubmit(e)}>
               <div className="input-box">
                 <p>
                   <label htmlFor="email">Email</label>
                 </p>
 
                 <div className="input-box-area">
-                  <input id="email" type="text" placeholder="Enter email" />
+                  <input
+                    id="email"
+                    type="text"
+                    name="username"
+                    onChange={(e) => handleChange(e)}
+                    placeholder="Enter email"
+                  />
+                  {formError && formError.username ? (
+                    <p>{formError.username}</p>
+                  ) : null}
                 </div>
               </div>
               {/* --- END! input-box (email) --- */}
@@ -33,8 +101,13 @@ function Login() {
                   <input
                     id="password"
                     type="password"
+                    name="password"
+                    onChange={(e) => handleChange(e)}
                     placeholder="Enter password"
                   />
+                  {formError && formError.password ? (
+                    <p>{formError.password}</p>
+                  ) : null}
                 </div>
               </div>
               {/* --- END! input-box (password) */}

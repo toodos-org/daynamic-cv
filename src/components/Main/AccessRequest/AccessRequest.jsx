@@ -1,7 +1,21 @@
+import { useMutation } from "@apollo/client";
 import { useState } from "react";
+import { SIGN_UP_REQUEST } from "../../../gql_operation/mutation";
 import "./AccessRequest.css";
 
 function AccessRequest() {
+  const [signUpRequest, { data, loading, error }] = useMutation(
+    SIGN_UP_REQUEST,
+    {
+      onCompleted: (res) => {
+        console.log("hello");
+      },
+      onError: (err) => {
+        console.log(err);
+      },
+    }
+  );
+
   // access request get input data
   const [accessReq, getAccessReq] = useState("");
 
@@ -12,15 +26,21 @@ function AccessRequest() {
    * access req form handle function
    * accessReqFormHandle()
    */
-
+  const regex = /\S+@\S+\.\S+/;
   function accessReqFormHandle(e) {
     if (accessReq == "" && accessReq.trim() == "") {
       setAccessReqErr(true);
     } else {
-      const regex = /\S+@\S+\.\S+/;
       if (regex.test(accessReq)) {
-        console.log("your mail is valid");
 
+        console.log(accessReq);
+        signUpRequest({
+          variables: {
+            input: {
+              email: accessReq,
+            },
+          },
+        });
         setAccessReqErr(false);
       } else {
         setAccessReqErr(true);
