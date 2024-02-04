@@ -1,6 +1,6 @@
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SIGN_IN_USER } from "../../../gql_operation/mutation";
 import "./Login.css";
 
@@ -8,11 +8,11 @@ function Login() {
   // USE LOGIN REQUEST
   const [signInRequest, { data, loading, error }] = useMutation(SIGN_IN_USER, {
     onCompleted: (res) => {
-      console.log("login success");
-      console.log(res);
+      localStorage.setItem("cv-maker", res?.tokenAuth?.token);
+      navigate("/cv");
     },
     onError: (err) => {
-      console.log(err);
+      alert("Please try again!");
     },
   });
 
@@ -35,13 +35,17 @@ function Login() {
       !formData.password
     ) {
       setFormError({
-        username: !formData.username ? "Email is required" : "Email is not valid",
+        username: !formData.username
+          ? "Email is required"
+          : "Email is not valid",
         password: !formData.password ? "Password is required!" : "",
       });
     } else {
       if (!formData.username || !checkEmail.test(formData.username)) {
         setFormError({
-          username: !formData.username ? "Email is required" : "Email is not valid",
+          username: !formData.username
+            ? "Email is required"
+            : "Email is not valid",
           password: "",
         });
       } else if (!formData.password) {
@@ -50,7 +54,6 @@ function Login() {
           password: !formData.password ? "Password is required!" : "",
         });
       } else {
-        console.log(formData);
         signInRequest({
           variables: {
             ...formData,
@@ -60,6 +63,9 @@ function Login() {
       }
     }
   };
+
+  // USE FOR ROUTE NAVIGATE
+  const navigate = useNavigate();
 
   return (
     <>

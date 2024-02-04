@@ -14,7 +14,7 @@ export const SIGN_UP_REQUEST = gql`
 `;
 
 export const SIGN_IN_USER = gql`
-  mutation UserSignIn($password: String, $username: String) {
+  mutation UserSignIn($password: String!, $username: String!) {
     tokenAuth(password: $password, username: $username) {
       token
     }
