@@ -1,10 +1,19 @@
 import { useMutation } from "@apollo/client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { SIGN_IN_USER } from "../../../gql_operation/mutation";
 import "./Login.css";
 
 function Login() {
+  const isLoggedIn = localStorage.getItem("cv-maker") ? true : false;
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      console.log(isLoggedIn);
+      navigate("/cv");
+    }
+  }, [isLoggedIn]);
+
   // USE LOGIN REQUEST
   const [signInRequest, { data, loading, error }] = useMutation(SIGN_IN_USER, {
     onCompleted: (res) => {

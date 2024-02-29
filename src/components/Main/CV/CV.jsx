@@ -1,3 +1,5 @@
+import { useQuery } from "@apollo/client";
+import { GET_USER_CV_BY_ID } from "../../../gql_operation/queires";
 import Footer from "../../shared/core/Footer/Footer";
 import About from "./About/About";
 import "./CV.css";
@@ -8,6 +10,12 @@ import Project from "./Project/Project";
 import Skill from "./Skill/Skill";
 
 function CV() {
+  const { loading, error, data, fe } = useQuery(GET_USER_CV_BY_ID);
+
+  console.log(error);
+
+  console.log(data);
+
   return (
     <>
       <main className="cv">
