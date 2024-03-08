@@ -1,6 +1,8 @@
 import "./Skill.css";
 
-function Skill() {
+function Skill(props) {
+  console.log("skillArray", props.skillArray);
+
   return (
     <>
       <section className="skill">

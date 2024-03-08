@@ -11,37 +11,61 @@ import Skill from "./Skill/Skill";
 
 function CV() {
   const { loading, error, data, fe } = useQuery(GET_USER_CV_BY_ID);
+  let storeCvData = [];
 
-  console.log(error);
+  if (loading) {
+    return (
+      <>
+        <h1>Please wait</h1>
+      </>
+    );
+  }
 
-  console.log(data);
+  if (error) {
+    return (
+      <>
+        <h1>Please Try Again</h1>
+      </>
+    );
+  }
 
-  return (
-    <>
-      <main className="cv">
-        <Profile></Profile>
-        {/* --- END! Profile --- */}
+  if (data) {
+    storeCvData = [...data.cv.edges];
+    console.log(storeCvData[0].node);
 
-        <About></About>
-        {/* --- END! About --- */}
+    return (
+      <>
+        <main className="cv">
+          <Profile profileData={storeCvData[0]?.node}></Profile>
+          {/* --- END! Profile --- */}
 
-        <Experience></Experience>
-        {/* --- END! Experience --- */}
+          <About aboutData={storeCvData[0].node.about}></About>
+          {/* --- END! About --- */}
 
-        <Education></Education>
-        {/* --- END! Education --- */}
+          <Experience
+            experienceArray={storeCvData[0].node.experienceSet.edges}
+          ></Experience>
+          {/* --- END! Experience --- */}
 
-        <Skill></Skill>
-        {/* --- END! Skill --- */}
+          <Education
+            educationArray={storeCvData[0].node.educationSet.edges}
+          ></Education>
+          {/* --- END! Education --- */}
 
-        <Project></Project>
-        {/* --- END! Project --- */}
+          <Skill skillArray={storeCvData[0].node.skillSet.edges}></Skill>
+          {/* --- END! Skill --- */}
 
-        <Footer></Footer>
-        {/* --- END! Footer --- */}
-      </main>
-    </>
-  );
+          <Project
+            projectsArray={storeCvData[0].node.projectSet.edges}
+          ></Project>
+          {/* --- END! Project --- */}
+
+          <Footer></Footer>
+          {/* --- END! Footer --- */}
+        </main>
+      </>
+    );
+  }
 }
 
 export default CV;

@@ -1,7 +1,9 @@
 import EducationCard from "../../../shared/common/EducationCard/EducationCard";
 import "./Education.css";
 
-function Education() {
+function Education(props) {
+  console.log("educationArray", props.educationArray);
+
   return (
     <>
       <section className="education-main">

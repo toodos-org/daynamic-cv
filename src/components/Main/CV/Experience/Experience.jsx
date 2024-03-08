@@ -1,7 +1,9 @@
 import ExperienceCard from "../../../shared/common/ExperienceCard/ExperienceCard";
 import "./Experience.css";
 
-function Experience() {
+function Experience(props) {
+  console.log("experienceArray", props.experienceArray);
+
   return (
     <>
       <section className="experience-main">
