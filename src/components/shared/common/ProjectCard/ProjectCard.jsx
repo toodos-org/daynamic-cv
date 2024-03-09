@@ -9,7 +9,7 @@ function ProjectCard(props) {
         <div className="project-card-top">
           <div className="project-card-title">
             <h3>
-              <a href={projectData?.liveUrl}>
+              <a href={projectData?.liveUrl} target="_blank">
                 <span>{projectData?.name}</span>
                 <small></small>
               </a>
