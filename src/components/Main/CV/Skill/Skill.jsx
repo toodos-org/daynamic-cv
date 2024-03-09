@@ -1,8 +1,7 @@
 import "./Skill.css";
 
 function Skill(props) {
-  console.log("skillArray", props.skillArray);
-
+  const skills = props.skillArray;
   return (
     <>
       <section className="skill">
@@ -15,11 +14,9 @@ function Skill(props) {
 
             <div className="all-skills">
               <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Angular</li>
+                {skills.map((skill) => {
+                  return <li key={skill?.node?.id}>${skill?.node?.name}</li>;
+                })}
               </ul>
             </div>
           </div>

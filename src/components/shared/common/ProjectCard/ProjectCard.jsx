@@ -1,21 +1,23 @@
 import "./ProjectCard.css";
 
-function ProjectCard() {
+function ProjectCard(props) {
+  const projectData = props?.project?.node;
+
   return (
     <>
       <div className="project-card">
         <div className="project-card-top">
           <div className="project-card-title">
             <h3>
-              <a>
-                <span>Consultly</span>
+              <a href={projectData?.liveUrl}>
+                <span>{projectData?.name}</span>
                 <small></small>
               </a>
             </h3>
           </div>
 
           <div className="project-card-description">
-            <p>Howdy is a place for you to join communities you care about</p>
+            <p>{projectData?.description}</p>
           </div>
         </div>
 

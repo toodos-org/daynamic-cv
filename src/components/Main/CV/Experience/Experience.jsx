@@ -2,7 +2,7 @@ import ExperienceCard from "../../../shared/common/ExperienceCard/ExperienceCard
 import "./Experience.css";
 
 function Experience(props) {
-  console.log("experienceArray", props.experienceArray);
+  const experiences = props?.experienceArray;
 
   return (
     <>
@@ -15,8 +15,11 @@ function Experience(props) {
             {/* --- END! title --- */}
 
             <div className="experience-cards">
-              {[0, 0, 0, 0].map((item, index) => (
-                <ExperienceCard key={index}></ExperienceCard>
+              {experiences.map((experience) => (
+                <ExperienceCard
+                  experience={experience}
+                  key={experience?.node?.id}
+                ></ExperienceCard>
               ))}
             </div>
             {/* --- END! experience-cards --- */}

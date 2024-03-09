@@ -31,7 +31,6 @@ function CV() {
 
   if (data) {
     storeCvData = [...data.cv.edges];
-    console.log(storeCvData[0].node);
 
     return (
       <>

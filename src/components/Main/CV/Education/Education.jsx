@@ -2,7 +2,7 @@ import EducationCard from "../../../shared/common/EducationCard/EducationCard";
 import "./Education.css";
 
 function Education(props) {
-  console.log("educationArray", props.educationArray);
+  const educationArray = props?.educationArray;
 
   return (
     <>
@@ -15,8 +15,11 @@ function Education(props) {
             {/* --- END! title --- */}
 
             <div className="education-cards">
-              {[0].map((item, index) => (
-                <EducationCard key={index} />
+              {educationArray.map((education, index) => (
+                <EducationCard
+                  education={education}
+                  key={education?.node?.id}
+                />
               ))}
             </div>
             {/* --- END! education-cards --- */}
